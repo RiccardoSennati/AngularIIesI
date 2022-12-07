@@ -1,0 +1,18 @@
+<div class="container">
+  <h4 class="mt-5">Totale foto favorite = {{count}}</h4>
+  <div class="row justify-content-center">
+    <div class="container d-flex justify-content-center mt-3">
+      <div class="spinner-border d-flex justify-content-center" role="status" *ngIf="loading">
+          <span class="visually-hidden">Loading...</span>
+      </div>
+  </div>
+  <div *ngFor="let pic of pics" class="card m-5" style="width: 18rem;">
+    <img src="{{pic.thumbnailUrl}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">{{pic.title}}</p>
+      <a href="#" class="btn btn-danger" (click)="cancellaImmagine(pic.id)">Elimina</a>
+      <a class="btn btn-success ms-3" (click)="like()">Like</a>
+    </div>
+  </div>
+</div>
+</div>
